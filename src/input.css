@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Karla";
+  src: url("./assets/fonts/Karla-VariableFont_wght.ttf") format("truetype");
+  font-style: medium;
+  font-weight: 100 900;
+}
+
+@theme {
+   --color-*: initial; 
+  --color-Grey-900: #2A4144;
+  --color-Grey-500: #86A2A5;
+  --color-Green-600:#0C7D69;
+  --color-Green-200:#E0F1E8;
+  --color-White:#FFFFFF;
+  --color-Red-errors:#D73C3C;
+ 
+
+  --font-Red-Hat-Text: "Karla";
+  --breakpoint-*: initial;
+  --breakpoint-sm: 375px;
+  --breakpoint-md: 508px;
+  --breakpoint-lg: 1280px;
+  --breakpoint-xl: 1440px;
+  /* Easing */
+  --ease-snappy: cubic-bezier(0.2, 0, 0, 1);
+}
+
+
+@layer utilities {
+  .Heading {
+    font-size: 2rem;
+    line-height: 1;
+    letter-spacing: -1px;
+    font-family: var(--font-Karla, "Karla", monospace);
+    font-weight: 700;
+  }
+ 
+  .Body-m-Bold {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+    font-family: var(--font-Karla, "Karla", monospace);
+    font-weight: 700;
+  }
+  
+  .Body-m{
+    font-size: 1.125rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+    font-family: var(--font-Karla, "Karla", monospace);
+    font-weight: 400;
+  }
+
+  .Body-s{
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+    font-family: var(--font-Karla, "Karla", monospace);
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="h-full min-w-[375px]" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link href="./src/output.css" rel="stylesheet" />
+    <script defer src="./main.js"></script>
+    <title>Contact Form</title>
+  </head>
+  <body class="min-h-screen bg-Green-200 flex justify-center items-center">
+  <!-- Toast -->
+  <div
+    id="toast"
+    role="status"
+    aria-live="polite"
+    class="bg-Grey-900 mx-auto space-y-4 p-6 rounded-xl w-[327px] lg:w-[450px] fixed top-5 left-1/2 -translate-x-1/2 -translate-y-10 opacity-0 pointer-events-none transition-all duration-500 ease-in-out"
+  >
+    <span class="flex gap-x-2.5">
+      <img src="./src/assets/images/icon-success-check.svg" alt="" />
+      <p class="Body-m-Bold text-White">Message Sent!</p>
+    </span>
+    <p class="text-Green-200 Body-s">
+      Thanks for completing the form. We’ll be in touch soon!
+    </p>
+  </div>
+
+  <!-- Contact Form -->
+  <form
+    id="contactForm"
+    action=""
+    class="bg-White p-7 rounded-2xl w-[343px] md:w-[736px]  my-8 md:my-32 "
+    novalidate
+  >
+    <p class="Heading mb-8 text-Grey-900">Contact Us</p>
+
+    <div class="space-y-6 grid grid-cols-1 md:grid-cols-2 gap-x-4">
+      <!-- First Name -->
+      <div class="h-[83px]">
+        <label for="firstName" class="block Body-s text-Grey-900">
+          First Name <span class="ml-2 Body-s text-Green-600">*</span>
+        </label>
+        <input
+          id="firstName"
+          name="firstName"
+          type="text"
+          required
+          aria-describedby="firstNameError"
+          class="w-full mt-2 block border border-Grey-500 focus:outline-none focus:border-Green-600 transition-colors duration-300 ease-in-out px-6 py-3 rounded-lg"
+        />
+        <p id="firstNameError" class="my-1 Body-s text-Red-errors hidden" aria-live="polite"></p>
+      </div>
+
+      <!-- Last Name -->
+      <div class="h-[83px]">
+        <label for="lastName" class="block Body-s text-Grey-900">
+          Last Name <span class="ml-2 Body-s text-Green-600">*</span>
+        </label>
+        <input
+          id="lastName"
+          name="lastName"
+          type="text"
+          required
+          aria-describedby="lastNameError"
+          class="w-full mt-2 block border border-Grey-500 focus:outline-none focus:border-Green-600 transition-colors duration-300 ease-in-out px-6 py-3 rounded-lg"
+        />
+        <p id="lastNameError" class="my-1 Body-s text-Red-errors hidden" aria-live="polite"></p>
+      </div>
+
+      <!-- Email -->
+      <div class="md:col-span-2 h-[83px]">
+        <label for="email" class="block Body-s text-Grey-900">
+          Email Address <span class="ml-2 Body-s text-Green-600">*</span>
+        </label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          required
+          aria-describedby="emailError"
+          class="w-full mt-2 block border border-Grey-500 focus:outline-none focus:border-Green-600 transition-colors duration-300 ease-in-out px-6 py-3 rounded-lg"
+        />
+        <p id="emailError" class="my-1 Body-s text-Red-errors hidden" aria-live="polite"></p>
+      </div>
+
+      <!-- Query Type -->
+      <fieldset class="md:col-span-2">
+        <legend class="Body-s text-Grey-900">
+          Query Type <span class="ml-2 Body-s text-Green-600">*</span>
+        </legend>
+
+        <div class="md:flex md:justify-between md:gap-x-4 mt-2 space-y-4 md:space-y-0">
+          <!-- Option 1 -->
+          <label
+            class="flex items-center w-full gap-x-[0.875rem] border border-Grey-500 px-6 py-3 rounded-lg cursor-pointer transition-colors duration-300 ease-in-out"
+          >
+            <input
+              id="generalEnquiry"
+              name="queryType"
+              type="radio"
+              value="general"
+              required
+              class="h-4 w-4 accent-Green-600 cursor-pointer"
+            />
+            <span class="Body-m text-Grey-900 hover:text-Green-600 transform transition-colors duration-300 ease-in-out">General Enquiry</span>
+          </label>
+
+          <!-- Option 2 -->
+          <label
+            class="flex items-center w-full gap-x-[0.875rem] border border-Grey-500 px-6 py-3 rounded-lg cursor-pointer transition-colors duration-300 ease-in-out"
+          >
+            <input
+              id="supportRequest"
+              name="queryType"
+              type="radio"
+              value="support"
+              required
+              class="h-4 w-4 accent-Green-600 cursor-pointer"
+            />
+            <span class="Body-m text-Grey-900  hover:text-Green-600 transform transition-colors duration-300 ease-in-out">Support Request</span>
+          </label>
+        </div>
+        <p id="queryTypeError" class="my-1 Body-s text-Red-errors hidden" aria-live="polite"></p>
+      </fieldset>
+
+      <!-- Message -->
+      <div class="md:col-span-2">
+        <label for="message" class="Body-s text-Grey-900">
+          Message <span class="ml-2 Body-s text-Green-600">*</span>
+        </label>
+        <textarea
+          id="message"
+          name="message"
+          required
+          rows="4"
+          aria-describedby="messageError"
+          class="block w-full mt-2 border border-Grey-500 rounded-lg px-6 py-3 focus:outline-none focus:border-Green-600 transition-colors duration-300 ease-in-out"
+        ></textarea>
+        <p id="messageError" class="my-1 Body-s text-Red-errors hidden" aria-live="polite"></p>
+      </div>
+
+      <!-- Checkbox -->
+      <div class="md:col-span-2">
+        <label for="consent" class="flex xl:flex-col my-8 items-center gap-x-[0.875rem]">
+          <input
+            id="consent"
+            name="consent"
+            type="checkbox"
+            required
+            aria-describedby="consentError"
+            class="h-4 w-4 accent-Green-600 rounded cursor-pointer"
+          />
+          <span class="Body-s text-Grey-900">
+            I consent to being contacted by the team <span class="ml-2 Body-s text-Green-600">*</span>
+          </span>
+  <p id="consentError" class="my-1 Body-s text-Red-errors hidden" aria-live="polite"></p>
+        </label>
+      
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        class="Body-m-Bold text-White bg-Green-600 w-full px-10 py-4 rounded-lg md:col-span-2 cursor-pointer"
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</body>
+
+</html>
